@@ -106,7 +106,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-eval `dircolors /home/${USER}/.dir_colors/dircolors`
+#eval `dircolors /home/${USER}/.dir_colors/dircolors`
 
 # autojump config
 [[ -s /home/${USER}/.autojump/etc/profile.d/autojump.sh ]] && source /home/${USER}/.autojump/etc/profile.d/autojump.sh

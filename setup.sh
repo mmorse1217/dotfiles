@@ -28,5 +28,5 @@ else
 fi
 
 # reload some dotfiles; others are only loaded on program init
-source ~/.bashrc
-bind -f ~/.inputrc
+#source ~/.bashrc
+#bind -f ~/.inputrc
