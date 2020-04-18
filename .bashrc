@@ -111,3 +111,5 @@ fi
 # autojump config
 [[ -s /home/${USER}/.autojump/etc/profile.d/autojump.sh ]] && source /home/${USER}/.autojump/etc/profile.d/autojump.sh
 
+# Turn off the stupid bell
+bind 'set bell-style none'
