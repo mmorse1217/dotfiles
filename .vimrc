@@ -14,7 +14,11 @@ Plug 'vim-airline/vim-airline'
 "Plug 'ervandew/supertab'
 "Plug 'xavierd/clang_complete'
 "Plug 'vim-syntastic/syntastic'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if exists('$VIM_DEV')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+else
+Plug 'ervandew/supertab'
+endif
 call plug#end()
 
 syntax on
@@ -99,6 +103,8 @@ let g:airline_extensions = ['ctrlp','tabline']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""             For coc.nvim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if exists('$VIM_DEV')
 " Define coc plugins to install
 let g:coc_global_extensions = [
             \ 'coc-json',
@@ -106,8 +112,8 @@ let g:coc_global_extensions = [
             \ 'coc-python',
             \ 'coc-snippets',
             \ 'coc-ultisnips',
+            \ 'coc-texlab',
             \ ]
-            "\ 'coc-texlab',
 
 
 " TextEdit might fail if hidden is not set.
@@ -265,3 +271,4 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+endif
