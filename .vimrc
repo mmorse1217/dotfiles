@@ -101,6 +101,12 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline_extensions = ['ctrlp','tabline']
+
+" Disable that stupid bell
+autocmd GUIEnter * set vb t_vb=
+set vb t_vb=
+set noerrorbells
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""             For coc.nvim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
