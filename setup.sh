@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function linkDotfile {
+function link_dotfile {
     dest="${HOME}/${1}"
     dateStr=$(date +%Y-%m-%d-%H%M)
 
@@ -30,28 +30,39 @@ function linkDotfile {
     ${dest}
 }
 
+MY_PATH="`dirname \"$0\"`"
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"
+
+
 echo "symlinking .bashrc..."
-ln -sf `pwd`/.bashrc ~/.bashrc
+#ln -sf $MY_PATH/.bashrc ~/.bashrc
+link_dotfile .bashrc 
 
 echo "symlinking .bash_aliases..."
-ln -sf `pwd`/.bash_aliases ~/.bash_aliases
+#ln -sf $MY_PATH/.bash_aliases ~/.bash_aliases
+link_dotfile .bash_aliases
 
 echo "symlinking .inputrc..."
-ln -sf `pwd`/.inputrc ~/.inputrc
+#ln -sf $MY_PATH/.inputrc ~/.inputrc
+link_dotfile .inputrc
 
 echo "symlinking .vimrc..."
-ln -sf `pwd`/.vimrc ~/.vimrc
+#ln -sf $MY_PATH/.vimrc ~/.vimrc
+link_dotfile  .vimrc
 
 echo "symlinking .spacemacs..."
-ln -sf `pwd`/.spacemacs ~/.spacemacs
+#ln -sf $MY_PATH/.spacemacs ~/.spacemacs
+link_dotfile .spacemacs
 
 echo "symlinking .tmux.conf..."
-ln -sf `pwd`/.tmux.conf ~/.tmux.conf
+#ln -sf $MY_PATH/.tmux.conf ~/.tmux.conf
+link_dotfile .tmux.conf 
 
 OS=$(uname -s)
 if [[ $OS == "Darwin" ]]; then
     echo "symlinking .bash_profile on macOS"
-    ln -sf `pwd`/.bash_profile ~/.bash_profile
+    #ln -sf $MY_PATH/.bash_profile ~/.bash_profile
+    link_dotfile  .bash_profile
     source ~/.bash_profile
 else
     echo "skipping .bash_profile: not on macOS"
@@ -59,5 +70,5 @@ else
 fi
 
 # reload some dotfiles; others are only loaded on program init
-source ~/.bashrc
-bind -f ~/.inputrc
+#source ~/.bashrc
+#bind -f ~/.inputrc
