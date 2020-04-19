@@ -1,5 +1,8 @@
 #!/bin/bash
 
+MY_PATH="`dirname \"$0\"`"
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"
+
 function link_dotfile {
     dest="${HOME}/${1}"
     dateStr=$(date +%Y-%m-%d-%H%M)
@@ -16,22 +19,14 @@ function link_dotfile {
 
     elif [ -d "${dest}" ]; then
         # Existing dir
-        echo "Backing up
-        existing dir: ${dest}"
-        mv
-        ${dest}{,.${dateStr}}
+        echo "Backing up existing dir: ${dest}"
+        mv ${dest}{,.${dateStr}}
     fi
 
-    echo "Creating
-    new symlink:
-    ${dest}"
-    ln -s
-    ${dotfilesDir}/${1}
-    ${dest}
+    echo "Creating new symlink: ${dest}"
+    ln -s ${MY_PATH}/${1} ${dest}
 }
 
-MY_PATH="`dirname \"$0\"`"
-MY_PATH="`( cd \"$MY_PATH\" && pwd )`"
 
 
 echo "symlinking .bashrc..."
@@ -68,7 +63,12 @@ else
     echo "skipping .bash_profile: not on macOS"
 
 fi
-
+#if [[ $OS == "Linux" ]]; then
+#    link_dotfile .xinitrc
+#    link_dotfile .Xmodmap
+#else 
+#    echo "skipping remapping of keybindings: not on linux"
+#fi
 # reload some dotfiles; others are only loaded on program init
 #source ~/.bashrc
 #bind -f ~/.inputrc

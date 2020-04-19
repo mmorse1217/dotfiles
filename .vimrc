@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plug-plug')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
 "Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 "Plug 'vim-latex/vim-latex'
 "Plug 'JuliaEditorSupport/julia-vim'
