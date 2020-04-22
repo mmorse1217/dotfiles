@@ -22,6 +22,9 @@ Plug 'ervandew/supertab'
 endif
 call plug#end()
 
+set nocompatible
+set backspace=indent,eol,start "backspace over everything in insert mode
+
 syntax on
 set background=dark
 "let g:solarized_termcolors=256
@@ -42,6 +45,9 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+" Disable backspace in normal and insert mode
+noremap <BS> <NOP>
+inoremap <BS> <NOP>
 function! ResCur()
   if line("'\"") <= line("$")
     normal! g`"
@@ -264,18 +270,18 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " coc-snippets
-" Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
+" Use <C-m> for trigger snippet expand.
+"imap <C-m> <Plug>(coc-snippets-expand)
 
-" Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
+" Use <C-b> for select text for visual placeholder of snippet.
+vmap <C-b> <Plug>(coc-snippets-select)
 
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+" Use <C-b> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-b>'
 
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
+" Use <C-n> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-n>'
 
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+" Use <C-b> for both expand and jump (make expand higher priority.)
+imap <C-b> <Plug>(coc-snippets-expand-jump)
 endif
