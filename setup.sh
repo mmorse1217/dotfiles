@@ -30,45 +30,38 @@ function link_dotfile {
 
 
 echo "symlinking .bashrc..."
-#ln -sf $MY_PATH/.bashrc ~/.bashrc
 link_dotfile .bashrc 
 
 echo "symlinking .bash_aliases..."
-#ln -sf $MY_PATH/.bash_aliases ~/.bash_aliases
 link_dotfile .bash_aliases
 
 echo "symlinking .inputrc..."
-#ln -sf $MY_PATH/.inputrc ~/.inputrc
 link_dotfile .inputrc
 
 echo "symlinking .vimrc..."
-#ln -sf $MY_PATH/.vimrc ~/.vimrc
 link_dotfile  .vimrc
 
 echo "symlinking .spacemacs..."
-#ln -sf $MY_PATH/.spacemacs ~/.spacemacs
 link_dotfile .spacemacs
 
 echo "symlinking .tmux.conf..."
-#ln -sf $MY_PATH/.tmux.conf ~/.tmux.conf
 link_dotfile .tmux.conf 
+
+echo "symlinking .vim/coc-settings.json..."
+link_dotfile .vim/coc-settings.json 
 
 OS=$(uname -s)
 if [[ $OS == "Darwin" ]]; then
     echo "symlinking .bash_profile on macOS"
-    #ln -sf $MY_PATH/.bash_profile ~/.bash_profile
     link_dotfile  .bash_profile
     source ~/.bash_profile
 else
     echo "skipping .bash_profile: not on macOS"
 
 fi
-#if [[ $OS == "Linux" ]]; then
-#    link_dotfile .xinitrc
-#    link_dotfile .Xmodmap
-#else 
-#    echo "skipping remapping of keybindings: not on linux"
-#fi
+
+
+
 # reload some dotfiles; others are only loaded on program init
 #source ~/.bashrc
 #bind -f ~/.inputrc
