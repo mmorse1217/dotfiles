@@ -326,7 +326,8 @@ you should place your code here."
     (setq org-startup-truncated nil)
     ;; orgmode change start day to today instead of Monday
     (setq org-agenda-start-on-weekday nil)
-    (setq org-agenda-start-day "-2d")
+    (setq org-agenda-start-day "-1d")
+    (setq org-agenda-span 10)
     ;; orgmode hide future deadlines in agenda
     (setq org-agenda-skip-deadline-prewarning-if-scheduled t)
     ;; remove repeat scheduled tasks (daily habits) from future days in agenda view

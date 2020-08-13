@@ -113,3 +113,7 @@ fi
 
 # Turn off the stupid bell
 bind 'set bell-style none'
+
+# check cpu 
+alias cpu_clock="watch -n1 \"lscpu | grep MHz | awk '{print \$1}'\";"
+alias dropbox="~/.dropbox-dist/dropboxd"
