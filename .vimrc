@@ -113,7 +113,12 @@ let g:airline_extensions = ['ctrlp','tabline']
 autocmd GUIEnter * set vb t_vb=
 set vb t_vb=
 set noerrorbells
-
+" Set vim colors to 256
+set t_Co=256
+" This is a bizarre workaround to allow for spell checking highlighting from
+" while using the solarized background
+" Documented here: https://github.com/vim/vim/issues/2424
+set t_Cs=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""             For coc.nvim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
