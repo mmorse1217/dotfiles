@@ -99,6 +99,7 @@ endif
 " CtrlP options
 let g:ctrlp_by_filename = 1
 let g:ctrlp_max_files = 0
+let g:ctrlp_working_path_mode = 'c'
 let g:tex_flavor = "latex"
 
 "airline related
