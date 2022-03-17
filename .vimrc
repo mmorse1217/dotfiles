@@ -129,7 +129,7 @@ if exists('$VIM_DEV')
 let g:coc_global_extensions = [
             \ 'coc-json',
             \ 'coc-clangd',
-            \ 'coc-python',
+            \ 'coc-pyright',
             \ 'coc-snippets',
             \ 'coc-ultisnips',
             \ 'coc-texlab',
