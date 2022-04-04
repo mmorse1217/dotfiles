@@ -317,7 +317,7 @@ you should place your code here."
     (require 'org-tempo)
   (with-eval-after-load 'org
     ;; specify org directory
-    (setq org-agenda-files '("~/org/tasks.org" "~/org/reminder.org"
+    (setq org-agenda-files '("~/org/tasks.org" "~/org/reminder.org" "~/org/review_todos.org"
     "~/org/calendar.org" "~/org/recurring.org" "~/org/projects.org" "~/org/future_plans.org"))
     ;; set orgmode to-do keywords
     (setq org-todo-keywords
