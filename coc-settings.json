@@ -1,4 +1,8 @@
 {
+    "snippets.ultisnips.usePythonx": false,
+    "clangd.arguments": [
+        "-clang-tidy=0", "-background-index=0"
+    ],
     "languageserver": {
         "latex": {
             "command": "/root/.cargo/bin/texlab",
