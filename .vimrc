@@ -6,16 +6,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-obsession'
-"Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
-"Plug 'vim-latex/vim-latex'
-"Plug 'JuliaEditorSupport/julia-vim'
-"Plug 'tomtom/tlib_vim'
-"Plug 'marcweber/vim-addon-mw-utils'
-"Plug 'garbas/vim-snipmate'
-"Plug 'honza/vim-snippets'
-"Plug 'ervandew/supertab'
-"Plug 'xavierd/clang_complete'
-"Plug 'vim-syntastic/syntastic'
+Plug 'puremourning/vimspector'
 if exists('$VIM_DEV')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
@@ -292,3 +283,32 @@ let g:coc_snippet_prev = '<c-n>'
 " Use <C-b> for both expand and jump (make expand higher priority.)
 imap <C-b> <Plug>(coc-snippets-expand-jump)
 endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""             For vimspector
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+set encoding=utf-8
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
+
+nmap <LocalLeader><F11> <Plug>VimspectorUpFrame
+nmap <LocalLeader><F12> <Plug>VimspectorDownFrame
+
+nnoremap <Leader>dd :call vimspector#Launch()<CR>
+nnoremap <Leader>de :call vimspector#Reset()<CR>
+nnoremap <Leader>dc :call vimspector#Continue()<CR>
+
+nnoremap <Leader>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Leader>dT :call vimspector#ClearBreakpoints()<CR>
+
+nmap <Leader>dk <Plug>VimspectorRestart
+nmap <Leader>dh <Plug>VimspectorStepOut
+nmap <Leader>dl <Plug>VimspectorStepInto
+nmap <Leader>dj <Plug>VimspectorStepOver
