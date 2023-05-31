@@ -4,7 +4,8 @@ call plug#begin('~/.vim/plug-plug')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator', {'commit', '6a1e58c3ca3bc7acca36c90521b3dfae83b2a602'}
 Plug 'tpope/vim-obsession'
 Plug 'puremourning/vimspector'
 if exists('$VIM_DEV')
@@ -100,6 +101,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#show_tabs = 1
 let g:airline_extensions = ['ctrlp','tabline']
+let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1"
 
 " Disable that stupid bell
 autocmd GUIEnter * set vb t_vb=
