@@ -5,7 +5,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'christoomey/vim-tmux-navigator', {'commit', '6a1e58c3ca3bc7acca36c90521b3dfae83b2a602'}
+Plug 'christoomey/vim-tmux-navigator', {'commit': '6a1e58c3ca3bc7acca36c90521b3dfae83b2a602'}
 Plug 'tpope/vim-obsession'
 Plug 'puremourning/vimspector'
 if exists('$VIM_DEV')
