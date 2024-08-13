@@ -115,5 +115,7 @@ fi
 bind 'set bell-style none'
 
 # check cpu 
-alias cpu_clock="watch -n1 \"lscpu | grep MHz | awk '{print \$1}'\";"
-alias dropbox="~/.dropbox-dist/dropboxd"
+#alias cpu_clock="watch -n1 \"lscpu | grep MHz | awk '{print \$1}'\";"
+#alias dropbox="~/.dropbox-dist/dropboxd"
+# For Thinkpad
+# alias greek="setxkbmap -model thinkpad -option 'grp:alt_shift_toggle' -layout us,gr"
