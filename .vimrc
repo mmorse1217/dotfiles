@@ -7,6 +7,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-obsession'
 Plug 'puremourning/vimspector'
+Plug 'jupyter-vim/jupyter-vim'
 if exists('$VIM_DEV')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 else
