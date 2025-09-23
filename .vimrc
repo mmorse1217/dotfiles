@@ -9,10 +9,15 @@ Plug 'christoomey/vim-tmux-navigator', {'commit': '6a1e58c3ca3bc7acca36c90521b3d
 Plug 'tpope/vim-obsession'
 Plug 'puremourning/vimspector'
 Plug 'jupyter-vim/jupyter-vim'
+Plug 'dense-analysis/ale'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
 if exists('$VIM_DEV')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ggml-org/llama.vim'
 else
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 endif
 call plug#end()
 
@@ -346,3 +351,39 @@ nmap <Leader>dk <Plug>VimspectorRestart
 nmap <Leader>dh <Plug>VimspectorStepOut
 nmap <Leader>dl <Plug>VimspectorStepInto
 nmap <Leader>dj <Plug>VimspectorStepOver
+
+"let g:llama_config.endpoint = "http://192.168.0.181:8080/infill"
+" --- ALE: enable lint + LSP ---
+let g:ale_linters = {
+\   'python': ['pylsp'],
+\   'cpp':    ['clangd'], 
+\}
+
+" Enable ALE completion via LSP
+let g:ale_completion_enabled = 1
+let g:ale_set_balloons = 1
+" use <CR> to accept first completion
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <CR> pumvisible() ? "\<C-n>\<C-y>" : "\<CR>"
+
+" Run linting on save
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+
+" Enable automatic formatting on save
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'python': ['black', 'isort'],
+\   'cpp':    ['clang-format'],
+\}
+
+" --- Example keybindings for LSP actions ---
+nmap <silent> gd <Plug>(ale_go_to_definition)
+nmap <silent> gr <Plug>(ale_find_references)
+nmap <silent> K  <Plug>(ale_hover)
+nmap <silent> <leader>rn <Plug>(ale_rename)
+
+nmap <silent> gk <Plug>(ale_previous_wrap)
+nmap <silent> gj <Plug>(ale_next_wrap)
+colorscheme darkblue

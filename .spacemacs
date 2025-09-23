@@ -318,7 +318,7 @@ you should place your code here."
   (with-eval-after-load 'org
     ;; specify org directory
     (setq org-agenda-files '("~/org/tasks.org" "~/org/reminder.org" "~/org/review_todos.org" "~/org/habits.org"
-    "~/org/calendar.org" "~/org/recurring.org" "~/org/projects.org" "~/org/future_plans.org"))
+    "~/org/calendar.org" "~/org/recurring.org" "~/org/projects.org"))
     ;; set orgmode to-do keywords
     (setq org-todo-keywords
           '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
