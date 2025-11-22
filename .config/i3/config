@@ -1,0 +1,7 @@
+
+# Remap Caps Lock and Control/Alt behavior
+exec --no-startup-id xmodmap -e "keycode 66 = Control_L"
+exec --no-startup-id xmodmap -e "keycode 37 = Alt_L"
+exec --no-startup-id xmodmap -e "keycode 64 = Control_L"
+exec --no-startup-id xmodmap -e "keycode 105 = Alt_R"
+exec --no-startup-id xmodmap -e "keycode 108 = Control_R"
