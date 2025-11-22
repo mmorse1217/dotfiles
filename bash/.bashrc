@@ -130,4 +130,5 @@ bind 'set bell-style none'
 #alias dropbox="~/.dropbox-dist/dropboxd"
 # For Thinkpad
 # alias greek="setxkbmap -model thinkpad -option 'grp:alt_shift_toggle' -layout us,gr"
-
+alias g="git"
+alias ask="llm -t search"

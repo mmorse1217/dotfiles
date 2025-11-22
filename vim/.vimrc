@@ -13,6 +13,7 @@ Plug 'dense-analysis/ale'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'preservim/nerdtree'
 if exists('$VIM_DEV')
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ggml-org/llama.vim'
@@ -120,6 +121,8 @@ set t_Co=256
 " while using the solarized background
 " Documented here: https://github.com/vim/vim/issues/2424
 set t_Cs=
+
+let mapleader = ";"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""             For coc.nvim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -386,4 +389,21 @@ nmap <silent> <leader>rn <Plug>(ale_rename)
 
 nmap <silent> gk <Plug>(ale_previous_wrap)
 nmap <silent> gj <Plug>(ale_next_wrap)
-colorscheme darkblue
+
+" NERDTree settings
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
+
+" easier buffer switching
+map <leader>m :bnext<cr>
+map <leader>p :bprevious<cr>
+map <leader>d :bdelete<cr>
