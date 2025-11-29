@@ -1,4 +1,7 @@
 # Load custom Xmodmap if it exists
 if [ -f "$HOME/.Xmodmap" ]; then
+    (
+    sleep 5
     xmodmap "$HOME/.Xmodmap"
+    ) & 
 fi
